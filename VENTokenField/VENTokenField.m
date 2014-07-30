@@ -132,8 +132,13 @@ static const CGFloat VENTokenFieldDefaultMaxHeight          = 150.0;
     [self layoutInputTextFieldWithCurrentX:&currentX currentY:&currentY];
 
     [self adjustHeightForCurrentY:currentY];
-    [self.scrollView setContentSize:CGSizeMake(self.scrollView.contentSize.width, currentY + [self heightForToken])];
-
+    CGSize currentContentSize = self.scrollView.contentSize;
+    CGSize contentSize = CGSizeMake(currentContentSize.width, currentY + [self heightForToken]);
+    [self.scrollView setContentSize:contentSize];
+    BOOL contentSizeChanged = currentContentSize.width != contentSize.width || currentContentSize.height != contentSize.height;
+    if (contentSizeChanged && [self.delegate respondsToSelector:@selector(tokenField:didChangeContentSize:)]) {
+        [self.delegate tokenField:self didChangeContentSize:contentSize];
+    }
     [self updateInputTextField];
 
     if (inputFieldShouldBecomeFirstResponder) {

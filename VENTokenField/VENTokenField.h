@@ -28,6 +28,7 @@
 - (void)tokenField:(VENTokenField *)tokenField didEnterText:(NSString *)text;
 - (void)tokenField:(VENTokenField *)tokenField didDeleteTokenAtIndex:(NSUInteger)index;
 - (void)tokenField:(VENTokenField *)tokenField didChangeText:(NSString *)text;
+- (void)tokenField:(VENTokenField *)tokenField didChangeContentSize:(CGSize)contentSize;
 - (void)tokenFieldDidBeginEditing:(VENTokenField *)tokenField;
 @end
 
