@@ -29,6 +29,7 @@
 - (void)tokenField:(VENTokenField *)tokenField didDeleteTokenAtIndex:(NSUInteger)index;
 - (void)tokenField:(VENTokenField *)tokenField didChangeText:(NSString *)text;
 - (void)tokenField:(VENTokenField *)tokenField didChangeContentSize:(CGSize)contentSize;
+- (void)tokenFieldDidReturn:(VENTokenField *)tokenField;
 - (void)tokenFieldDidBeginEditing:(VENTokenField *)tokenField;
 @end
 
@@ -66,6 +67,8 @@
 @property (strong, nonatomic) UILabel *toLabel;
 
 @property (copy, nonatomic) NSString *placeholderText;
+
+@property (assign, nonatomic) UIReturnKeyType returnKeyType;
 
 - (void)setColorScheme:(UIColor *)color;
 
