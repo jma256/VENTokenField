@@ -23,6 +23,7 @@
     self.tokenField.delegate = self;
     self.tokenField.dataSource = self;
     self.tokenField.placeholderText = NSLocalizedString(@"Enter names here", nil);
+    self.tokenField.toLabelText = NSLocalizedString(@"Post to:", nil);
     [self.tokenField setColorScheme:[UIColor colorWithRed:61/255.0f green:149/255.0f blue:206/255.0f alpha:1.0f]];
     [self.tokenField becomeFirstResponder];
 }
@@ -67,7 +68,7 @@
 
 - (NSString *)tokenFieldCollapsedText:(VENTokenField *)tokenField
 {
-    return [NSString stringWithFormat:@"%lu people", [self.names count]];
+    return [NSString stringWithFormat:@"%tu people", [self.names count]];
 }
 
 @end

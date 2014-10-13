@@ -48,6 +48,7 @@
 
 - (void)reloadData;
 - (void)collapse;
+- (NSString *)inputText;
 
 
 /**-----------------------------------------------------------------------------
@@ -61,7 +62,9 @@
 @property (assign, nonatomic) CGFloat tokenPadding;
 @property (assign, nonatomic) CGFloat minInputWidth;
 
+@property (assign, nonatomic) UIKeyboardType inputTextFieldKeyboardType;
 @property (strong, nonatomic) UIColor *toLabelTextColor;
+@property (strong, nonatomic) NSString *toLabelText;
 @property (strong, nonatomic) UIColor *inputTextFieldTextColor;
 
 @property (strong, nonatomic) UILabel *toLabel;
